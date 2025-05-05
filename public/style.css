@@ -1,0 +1,118 @@
+/* ===== Existing Styles (Unchanged) ===== */
+body {
+  background-color: #bf7272;
+  font-family: 'Cascadia Code', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.pokedex-content {
+  width: 100%;
+}
+
+/* Updated Charizard container to match top/bottom width */
+.pokedex-border {
+  background-color: #e2e9ef;
+  border: 10px solid #150204;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 80%; /* Changed from 100% to match top/bottom */
+  box-sizing: border-box;
+  margin: 0 auto; /* Center the container */
+}
+
+.pokedex-border h1 {
+  color: #150204;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pokemon-image {
+  width: 250px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.pokedex-description {
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.sensor {
+  gap: 1em;
+  margin: 1em;
+  background-color: #150204;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.pokesensor {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  margin: 2em;
+}
+
+/* ===== Modified Styles ===== */
+
+/* Top Red Bar (No more rectangle here) */
+.pokedex-lightindicator {
+  background-color: #e60000;
+  height: 80px;
+  width: 67%;
+  border: 10px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Bottom Red Bar (Now with octagon AND cyan rectangle) */
+.pokedex-lightindicatorbotom {
+  background-color: #e60000;
+  height: 160px;
+  width: 67%;
+  border: 10px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative; /* For absolute positioning of rectangle */
+}
+
+/* Green Octagon */
+.ledindicatorcontainer {
+  width: 100px;
+  height: 100px;
+  background-color: #6fcd6c;
+  clip-path: polygon(
+          30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
+  );
+}
+
+/* Cyan Rectangle (Moved to bottom) */
+.pokedex-lightindicatorbotom::after {
+  content: "";
+  position: absolute;
+  justify-content: left;
+  align-items: flex-start;
+  right: 20px;
+  width: 150px;
+  height: 50px;
+  background-color: #00ffff;
+}
